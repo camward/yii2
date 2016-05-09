@@ -15,10 +15,13 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
-        'js/angular.min.js',
-        'js/angular-route.min.js',
-        'js/angular-animate.min.js',
+        'js/lib/angular.min.js',
+        'js/lib/angular-route.min.js',
+        'js/lib/angular-animate.min.js',
         'js/app.js',
+        'js/controllers/site.js',
+        'js/models/film.js',
+        'js/controllers/film.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

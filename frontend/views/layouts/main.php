@@ -14,7 +14,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html ng-app="myApp" lang="<?= Yii::$app->language ?>">
+<html ng-app="yii2AngApp" lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 
-<body>
+<body ng-controller="index">
 <?php $this->beginBody() ?>
     <nav class="navbar navbar-default">
         <div class="container">
@@ -31,7 +31,8 @@ AppAsset::register($this);
                 <a class="navbar-brand" href="#/">My Company</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/"><i class="glyphicon glyphicon-home"></i> Главная</a></li>
+                <li><a href="#/site/index"><i class="glyphicon glyphicon-home"></i> Главная</a></li>
+                <li><a href="#/film/index"><i class="glyphicon glyphicon-film"></i> Каталог фильмов</a></li>
                 <li><a href="#/site/about"><i class="glyphicon glyphicon-tag"></i> О приложении</a></li>
                 <li><a href="#/site/contact"><i class="glyphicon glyphicon-envelope"></i> Обратная связь</a></li>
             </ul>

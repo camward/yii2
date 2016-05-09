@@ -1,36 +1,12 @@
-var myApp = angular.module('myApp', [
-    'ngRoute'
+var yii2AngApp = angular.module('yii2AngApp', [
+    'ngRoute',
+    'yii2AngApp.site',
+    'yii2AngApp.film'
 ]);
 
-myApp.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider
-            .when('/site/index', {
-                templateUrl: 'views/index.html',
-                controller: 'index'
-            })
-            .when('/site/about', {
-                templateUrl: 'views/about.html',
-                controller: 'about'
-            })
-            .when('/site/contact', {
-                templateUrl: 'views/contact.html',
-                controller: 'contact'
-            })
-            .otherwise({
-                redirectTo: '/site/index'
-            });
-    }]);
+var yii2AngApp_site = angular.module('yii2AngApp.site', ['ngRoute']);
+var yii2AngApp_film = angular.module('yii2AngApp.film', ['ngRoute']);
 
-myApp.controller('index', ['$scope', '$http', function($scope, $http) {
-        // Сообщение для отображения представлением
-        $scope.message = 'Вы читаете главную страницу приложения. ';
-    }])
-    .controller('about', ['$scope', '$http', function($scope, $http) {
-        // Сообщение для отображения представлением
-        $scope.message = 'Это страница с информацией о приложении.';
-    }])
-    .controller('contact', ['$scope', '$http', function($scope, $http) {
-        // Сообщение для отображения представлением
-        $scope.message = 'Пишите письма. Мы будем рады!.';
-    }]);
+yii2AngApp.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.otherwise({redirectTo: '/site/index'});
+}]);
